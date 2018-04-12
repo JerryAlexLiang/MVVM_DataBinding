@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--3、使用了DataBinding之后的Activity的布局文件
+    activity_main.xml
+    （1）、根节点变成了layout，里面包括了data节点和传统的布局.
+    （2）、这里的data节点作用是连接 View 和 Model 的桥梁.
+    （3）、在这个data节点中声明一个variable变量，那值就可以轻松传到布局文件中来了
+    （4）、TextView中没有给控件定义id，而是在text的时候用了@{ }的方法，
+    在括号里面直接引用UserBean对象的属性即可完成赋值。-->
+    <data>
+
+        <variable
+            name="user"
+            type="com.example.databinding_demo01.UserBean" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@{user.name}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp" />
+
+        <!--注意：这里age是int类型，必须转化为String，否则会运行时异常-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@{String.valueOf(user.age)}"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</layout>
