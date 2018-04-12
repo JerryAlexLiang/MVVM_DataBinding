@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/MVVM_DataBinding.iml" filepath="$PROJECT_DIR$/MVVM_DataBinding.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/databinding_demo01/databinding_demo01.iml" filepath="$PROJECT_DIR$/databinding_demo01/databinding_demo01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/databinding_demo02/databinding_demo02.iml" filepath="$PROJECT_DIR$/databinding_demo02/databinding_demo02.iml" />
     </modules>
   </component>
 </project>

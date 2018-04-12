@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">databinding_demo02</string>
+    <string name="function_one">布局属性import用法与别名</string>
+    <string name="function_two">布局属性Converter格式转换器</string>
+</resources>

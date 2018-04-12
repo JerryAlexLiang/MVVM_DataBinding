@@ -1,1 +1,1 @@
-include ':app', ':databinding_demo01'
+include ':app', ':databinding_demo01', ':databinding_demo02'
