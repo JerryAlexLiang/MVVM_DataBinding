@@ -1,11 +1,13 @@
 package com.example.databinding_demo01;
 
 import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Toast;
 
 import com.example.databinding_demo01.databinding.ActivityMainBinding;
+
 
 /**
  * 创建日期：2018/4/12 on 下午4:53
@@ -19,7 +21,7 @@ import com.example.databinding_demo01.databinding.ActivityMainBinding;
  * 即：第一个单词首字母大写，第二个单词首字母大写，最后都会拼上Binding就是生成的Binding类。
  * 作者: liangyang
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,5 +34,33 @@ public class MainActivity extends AppCompatActivity {
         UserBean userBean = new UserBean("马天宇", 29);
         binding.setUser(userBean);
 
+        //点击事件方法一
+        //btnClick就是XML中id为btn_click的Button，当给控件设置id时，就会在Binding辅助类中生成一个相应的public final字段，以供使用
+        binding.btnClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "点击事件方法一", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //点击事件方法2通过属性设置，布局中引入OnClickListener的变量,在控件中通过@{}来设置自己的点击事件
+        binding.setOnclicklistener(this);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_next_one:
+                Toast.makeText(MainActivity.this, "点击事件方法二，id=1", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.btn_next_two:
+                Toast.makeText(MainActivity.this, "点击事件方法二，id=2", Toast.LENGTH_SHORT).show();
+                break;
+
+            default:
+                break;
+        }
     }
 }

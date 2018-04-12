@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DataBinding_demo01</string>
+    <string name="btn_name_one">点击事件方法一</string>
+    <string name="btn_name_two">点击事件方法二</string>
 </resources>

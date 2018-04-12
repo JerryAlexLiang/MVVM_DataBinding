@@ -10,22 +10,33 @@
     在括号里面直接引用UserBean对象的属性即可完成赋值。-->
     <data>
 
+        <import type="com.example.databinding_demo01.UserBean" />
+
+        <!--variable节点的每一个变量都会在Binding辅助类中生成对应的getters和setters-->
         <variable
             name="user"
             type="com.example.databinding_demo01.UserBean" />
 
+        <!--点击事件方法2通过属性设置，布局中引入OnClickListener的变量,在控件中通过@{}来设置自己的点击事件-->
+        <variable
+            name="Onclicklistener"
+            type="android.view.View.OnClickListener" />
+
+        <!--布局属性之静态方法调用，达到对数据进行转换的目的-->
+        <import type="com.example.databinding_demo01.Utils" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
         android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@{user.name}"
+            android:text="@{`姓名：`+user.name}"
             android:textColor="@color/colorPrimary"
             android:textSize="20sp" />
 
@@ -34,9 +45,44 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="@{String.valueOf(user.age)}"
+            android:text="@{`年龄：`+String.valueOf(user.age)}"
             android:textColor="@color/colorAccent"
             android:textSize="18sp" />
+
+        <!--事件处理方法1-->
+        <Button
+            android:id="@+id/btn_click"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/btn_name_one" />
+
+        <!--点击事件方法2通过属性设置，布局中引入OnClickListener的变量,在控件中通过@{}来设置自己的点击事件-->
+        <Button
+            android:id="@+id/btn_next_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="@{Onclicklistener}"
+            android:text="@string/btn_name_two" />
+
+        <Button
+            android:id="@+id/btn_next_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="@{Onclicklistener}"
+            android:text="@string/btn_name_two" />
+
+        <!--布局属性之静态方法调用，达到对数据进行转换的目的-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="@{Utils.getName(user)}"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
