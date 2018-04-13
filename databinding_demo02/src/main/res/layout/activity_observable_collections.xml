@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <!--type="android.databinding.ObservableArrayList<String>"
+        使用转移符：type="android.databinding.ObservableArrayList&lt;String&gt;" -->
+
+        <!--ObservableList&lt;UserBean>-->
+        <import type="android.databinding.ObservableList" />
+
+        <variable
+            name="list"
+            type="ObservableList&lt;com.example.databinding_demo02.UserBean>" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="@{list.get(0).name}"
+            android:textColor="@color/colorAccent"
+            android:textSize="22sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="@{list.get(1).name}"
+            android:textColor="@color/colorAccent"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/btn_change_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/btn_change_list"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+</layout>

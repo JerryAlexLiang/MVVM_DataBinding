@@ -2,4 +2,10 @@
     <string name="app_name">databinding_demo02</string>
     <string name="function_one">布局属性import用法与别名</string>
     <string name="function_two">布局属性Converter格式转换器</string>
+    <string name="function_three">继承Observable类实现动态更新</string>
+    <string name="function_four">使用ObservableField实现动态更新</string>
+    <string name="function_five">使用Observable容器实现动态更新</string>
+    <string name="btn_update_way_one">使用Observable更新数据</string>
+    <string name="btn_update_way_two">使用ObservableField更新数据</string>
+    <string name="btn_change_list">使用Observable容器更新数据</string>
 </resources>

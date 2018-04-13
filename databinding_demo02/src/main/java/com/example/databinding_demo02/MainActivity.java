@@ -16,6 +16,12 @@ public class MainActivity extends AppCompatActivity {
     Button btnOne;
     @BindView(R.id.btn_two)
     Button btnTwo;
+    @BindView(R.id.btn_three)
+    Button btnThree;
+    @BindView(R.id.btn_four)
+    Button btnFour;
+    @BindView(R.id.btn_five)
+    Button btnFive;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_one, R.id.btn_two})
+    @OnClick({R.id.btn_one, R.id.btn_two, R.id.btn_three, R.id.btn_four, R.id.btn_five})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_one:
@@ -34,6 +40,18 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.btn_two:
                 startActivity(new Intent(this, ConverterActivity.class));
+                break;
+
+            case R.id.btn_three:
+                startActivity(new Intent(this, ObservableUpdateActivity.class));
+                break;
+
+            case R.id.btn_four:
+                startActivity(new Intent(this, ObservableFieldUpdateActivity.class));
+                break;
+
+            case R.id.btn_five:
+                startActivity(new Intent(this, ObservableCollectionsActivity.class));
                 break;
         }
     }

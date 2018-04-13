@@ -23,4 +23,29 @@
         android:layout_marginTop="10dp"
         android:textAllCaps="false"/>
 
+    <Button
+        android:id="@+id/btn_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/function_three"
+        android:layout_marginTop="10dp"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_four"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/function_four"
+        android:layout_marginTop="10dp"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_five"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/function_five"
+        android:layout_marginTop="10dp"
+        android:textAllCaps="false"/>
+
+
 </LinearLayout>
