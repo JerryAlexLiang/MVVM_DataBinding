@@ -20,7 +20,8 @@
         <activity android:name=".ConverterActivity" />
         <activity android:name=".ObservableUpdateActivity" />
         <activity android:name=".ObservableFieldUpdateActivity" />
-        <activity android:name=".ObservableCollectionsActivity"></activity>
+        <activity android:name=".ObservableCollectionsActivity" />
+        <activity android:name=".TwoWayBindingActivity"></activity>
     </application>
 
 </manifest>

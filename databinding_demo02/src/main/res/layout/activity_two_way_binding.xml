@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.example.databinding_demo02.ObUserBean" />
+
+        <variable
+            name="obuserbean"
+            type="ObUserBean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--定义TextView动态来显示ObUserBean的name字段的变化-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:text="@{obuserbean.name}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="22sp" />
+
+        <!--用EditText来改变ObUserBean的name字段
+        关键是：将@{obuserbean.name}改为
+        android:text="@={obuserbean.name}"-->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:background="@android:drawable/editbox_background"
+            android:text="@={obuserbean.name}"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_reset_binding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:text="@string/btn_reset_binding" />
+
+    </LinearLayout>
+</layout>
