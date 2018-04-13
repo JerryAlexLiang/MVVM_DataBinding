@@ -21,7 +21,8 @@
         <activity android:name=".ObservableUpdateActivity" />
         <activity android:name=".ObservableFieldUpdateActivity" />
         <activity android:name=".ObservableCollectionsActivity" />
-        <activity android:name=".TwoWayBindingActivity"></activity>
+        <activity android:name=".TwoWayBindingActivity" />
+        <activity android:name=".RvActivity"></activity>
     </application>
 
 </manifest>
